@@ -50,6 +50,18 @@ export class IframePCF implements ComponentFramework.StandardControl<IInputs, IO
 		this.iframeelem.src = context.parameters.src.raw
 		};
 		
+		//chass Appending a PVA Variable value
+		//SRC needs to be the chatbot ID 
+		//PVAVar Needs to be the PVA variable name.  NOTE You MUST set this variable property to 'External sources can set values' in Power Virtual Agents
+		//PVAValue Can be any Text String
+		//For testing you can use the following
+		//SRC =  https://powerva.microsoft.com/webchat/bots/a6a0c899-c4af-4a23-922e-60850b5d4cf1
+		//PVAVar = PVAVar
+		//PVAVal = Any string
+		//In a browser that URI would be: https://powerva.microsoft.com/webchat/bots/a6a0c899-c4af-4a23-922e-60850b5d4cf1?PVAVar=Test 
+		//To Trigger the topic Please 'ChucksVar' -with no single quotes
+		this.iframeelem.src = context.parameters.src.raw + "?" + context.parameters.PVAVar.raw + "=" + context.parameters.PVAVal.raw  //Need to make the param name dynamic
+		//chass
 		this.iframeelem.width = "500";
 		this.iframeelem.height ="700";		
 		this.iframeelem.frameBorder = "0";
