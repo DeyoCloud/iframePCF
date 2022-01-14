@@ -3,6 +3,8 @@
   <control namespace="btd" constructor="IframePCF" version="0.0.1" display-name-key="IframePCF" description-key="IframePCF description" control-type="standard">
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
     <property name="src" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="PVAVar" display-name-key="PVA_Variable" description-key="PVA_Variable" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="PVAVal" display-name-key="PVA_Value" description-key="PVA_Value" of-type="SingleLine.Text" usage="bound" required="true" />
     <!-- 
       Property node's of-type attribute can be of-type-group attribute. 
       Example:
