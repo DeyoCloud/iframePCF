@@ -26,12 +26,17 @@ export class IframePCF implements ComponentFramework.StandardControl<IInputs, IO
 
 		if( context.parameters.src.raw)
 		{
-		this.iframeelem.src = context.parameters.src.raw
+			this.iframeelem.src = context.parameters.src.raw
 		};
-		
-		this.iframeelem.width = "500";
-		this.iframeelem.height ="700";
+
+		this.iframeelem.width = "100%";
+		this.iframeelem.height ="100%";
 		this.iframeelem.frameBorder = "0";
+		this.iframeelem.style.position = "fixed";
+		this.iframeelem.style.top = "0";
+		this.iframeelem.style.left = "0";
+		this.iframeelem.style.right = "0";
+		this.iframeelem.style.bottom = "0";
 
 		container.appendChild(this.iframeelem);
 	}
@@ -47,16 +52,21 @@ export class IframePCF implements ComponentFramework.StandardControl<IInputs, IO
 		// Add code to update control view
 		if( context.parameters.src.raw)
 		{
-		this.iframeelem.src = context.parameters.src.raw
+			this.iframeelem.src = context.parameters.src.raw
 		};
-		
-		this.iframeelem.width = "500";
-		this.iframeelem.height ="700";		
+
+		this.iframeelem.width = "100%";
+		this.iframeelem.height ="100%";
 		this.iframeelem.frameBorder = "0";
+		this.iframeelem.style.position = "fixed";
+		this.iframeelem.style.top = "0";
+		this.iframeelem.style.left = "0";
+		this.iframeelem.style.right = "0";
+		this.iframeelem.style.bottom = "0";
 	}
 
-	/** 
-	 * It is called by the framework prior to a control receiving new data. 
+	/**
+	 * It is called by the framework prior to a control receiving new data.
 	 * @returns an object based on nomenclature defined in manifest, expecting object[s] for property marked as “bound” or “output”
 	 */
 	public getOutputs(): IOutputs
@@ -64,7 +74,7 @@ export class IframePCF implements ComponentFramework.StandardControl<IInputs, IO
 		return {};
 	}
 
-	/** 
+	/**
 	 * Called when the control is to be removed from the DOM tree. Controls should use this call for cleanup.
 	 * i.e. cancelling any pending remote calls, removing listeners, etc.
 	 */
